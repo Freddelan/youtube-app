@@ -111,7 +111,7 @@ const Navbar = (props) => {
         )}
       </div>
       <div className="flex">
-        <div className="relative ml-24   ">
+        <div className="relative ml-24 ">
           <div
             className="p-3 rounded-full hover:bg-gray-200 transition-colors "
             onMouseEnter={handleMouseEnterScope}
