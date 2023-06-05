@@ -38,9 +38,13 @@ const Navbar = (props) => {
     setShowTooltipNotification(false);
   };
 
+  const handleMenuClick = () => {
+    props.toggleSidebar();
+  };
+
   return (
     <div className="container flex items-center">
-      <div className="menuBurger relative ml-5">
+      <div className="menuBurger relative ml-5" onClick={handleMenuClick}>
         <div className=" p-3 rounded-full hover:bg-gray-200 transition-colors duration-300">
           <img
             className=" "
