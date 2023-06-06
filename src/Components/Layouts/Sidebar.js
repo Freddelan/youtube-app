@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Sidebar = (props) => {
   const handleMenuClick = () => {
     props.toggleSidebar();
   };
 
+  const handleItemClick = () => {
+    props.toggleSidebar(); // Fermer la sidebar lorsque vous cliquez sur un élément de la liste
+  };
+
   return (
-    <div className="containerSide w-96 flex flex-col">
-      <div className="burgerLogo flex items-center">
+    <div className="containerSide absolute w-96 bg-white flex flex-col z-10 top-0 transition-transform duration-800 transform -translate-x-full md:translate-x-0">
+      {/* <div className="burgerLogo flex items-center">
         <div className="menuBurger relative ml-5" onClick={handleMenuClick}>
           <div className="p-3 rounded-full hover:bg-gray-200 transition-colors duration-300">
             <img
               className=""
-              width="32"
+              width="22"
               src="https://img.icons8.com/ios-glyphs/30/menu--v1.png"
               alt="menu--v1"
             />
@@ -20,17 +24,17 @@ const Sidebar = (props) => {
         </div>
         <div className="logo relative">
           <img
-            className="logoyt w-40 ml-6 mb-8 mt-4"
+            className="logoyt w-28 ml-20 mb-8 mt-4"
             src={props.elsrc}
             alt={props.elalt}
           />
         </div>
-      </div>
+      </div> */}
       <div className="menu overflow-y-auto  ml-8">
-        <ul>
-          <li className="flex center  ">
+        <ul className="text-xl mt-20">
+          <li className="flex center" onClick={handleItemClick}>
             <img
-              width="24"
+              width="30"
               height="24"
               src="https://img.icons8.com/fluency-systems-regular/48/home.png"
               alt="home"
@@ -40,7 +44,7 @@ const Sidebar = (props) => {
           <br />
           <li className="flex center">
             <img
-              width="24"
+              width="30"
               height="24"
               src="https://img.icons8.com/plumpy/24/000000/flash-on.png"
               alt="flash-on"
@@ -50,7 +54,7 @@ const Sidebar = (props) => {
           <br />
           <li className="flex center">
             <img
-              width="24"
+              width="30"
               height="24"
               src="https://img.icons8.com/ios/50/video-playlist.png"
               alt="video-playlist"
@@ -59,9 +63,10 @@ const Sidebar = (props) => {
           </li>
           <br />
           <hr />
+          <br />
           <li className="flex center">
             <img
-              width="24"
+              width="30"
               height="24"
               src="https://img.icons8.com/material-outlined/24/video-gallery.png"
               alt="video-gallery"
@@ -71,7 +76,7 @@ const Sidebar = (props) => {
           <br />
           <li className="flex center">
             <img
-              width="24"
+              width="30"
               height="24"
               src="https://img.icons8.com/ios/50/time-machine--v1.png"
               alt="time-machine--v1"
@@ -81,7 +86,7 @@ const Sidebar = (props) => {
           <br />
           <li className="flex center">
             <img
-              width="24"
+              width="30"
               height="24"
               src="https://img.icons8.com/ios/50/clock--v1.png"
               alt="clock--v1"
@@ -91,7 +96,7 @@ const Sidebar = (props) => {
           <br />
           <li className="flex center">
             <img
-              width="24"
+              width="30"
               height="24"
               src="https://img.icons8.com/material-outlined/24/facebook-like--v1.png"
               alt="facebook-like--v1"
@@ -100,11 +105,12 @@ const Sidebar = (props) => {
           </li>
           <br />
           <hr />
+          <br />
           <li>Abonnements</li>
           <br />
           <li className="flex center">
             <img
-              width="24"
+              width="30"
               height="24"
               src="https://img.icons8.com/bubbles/50/user-male.png"
               alt="user-male"
@@ -114,7 +120,7 @@ const Sidebar = (props) => {
           <br />
           <li className="flex center">
             <img
-              width="24"
+              width="30"
               height="24"
               src="https://img.icons8.com/ios/50/add--v1.png"
               alt="add--v1"

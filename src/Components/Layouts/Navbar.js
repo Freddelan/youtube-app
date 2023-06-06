@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Navbar = (props) => {
   const [isInputFocused, setInputFocused] = useState(false);
-  const [showTooltip, setShowTooltip] = useState(false);
+
   const [showTooltipMicrophone, setShowTooltipMicrophone] = useState(false);
   const [showTooltipScope, setShowTooltipScope] = useState(false);
   const [showTooltipNotification, setShowTooltipNotification] = useState(false);
@@ -43,39 +43,40 @@ const Navbar = (props) => {
   };
 
   return (
-    <div className="container flex items-center">
-      <div className="menuBurger relative ml-5" onClick={handleMenuClick}>
-        <div className=" p-3 rounded-full hover:bg-gray-200 transition-colors duration-300">
+    <div className="containerNavbar navbar relative z-20 mt-0 container flex items-center top-0">
+      <div className="burgerLogo flex items-center">
+        <div className="menuBurger  ml-4 top-0" onClick={handleMenuClick}>
+          <div className="p-3 rounded-full hover:bg-gray-200 transition-colors">
+            <img
+              className=""
+              width="22"
+              src="https://img.icons8.com/ios-glyphs/30/menu--v1.png"
+              alt="menu--v1"
+            />
+          </div>
+        </div>
+        <div className="logo absolute ml-20">
           <img
-            className=" "
-            width="32"
-            src="https://img.icons8.com/ios-glyphs/30/menu--v1.png"
-            alt="menu--v1"
+            className="logoyt w-28 ml-2  "
+            src={props.elsrc}
+            alt={props.elalt}
           />
         </div>
       </div>
-      <div className="logo relative">
-        <img
-          className="logoyt w-40 ml-6 mb-8 mt-4"
-          src={props.elsrc}
-          alt={props.elalt}
-        />
-      </div>
-
-      <div className="relative  text-2xl ml-28 flex items-center">
+      <div className="relative  text-1xl ml-72 flex items-center">
         <input
           type="text"
-          className={`px-6 py-2 w-64 md:w-auto custom-width h-14 border border-gray-300 rounded-l-full focus:outline-none transition-all duration-300 ${
+          className={`px-6 py-2 w-8 md:w-auto custom-width h-10 border border-gray-300 rounded-l-full focus:outline-none transition-all duration-300 ${
             isInputFocused ? "pl-12 w-80" : ""
           }`}
           placeholder="Rechercher"
-          style={{ width: "720px" }}
+          style={{ width: "520px" }}
           onFocus={handleInputFocus}
           onBlur={handleInputBlur}
         />
-        <button className="px-6 py-2 h-14 font-thin bg-gray-300 border border-gray-300 rounded-r-full w-22 ">
+        <button className="px-6 py-2 h-10 font-thin bg-gray-300 border border-gray-300 rounded-r-full w-22 ">
           <img
-            width="30"
+            width="24"
             height="30"
             src="https://img.icons8.com/ios-glyphs/30/search--v1.png"
             alt="search--v1"
@@ -99,7 +100,7 @@ const Navbar = (props) => {
           onMouseLeave={handleMouseLeaveMicrophone}
         >
           <img
-            width="32"
+            width="24"
             height="32"
             src="https://img.icons8.com/material-rounded/24/microphone.png"
             alt="microphone"
@@ -115,14 +116,14 @@ const Navbar = (props) => {
         )}
       </div>
       <div className="flex">
-        <div className="relative ml-24 ">
+        <div className="relative ml-96 mt-2">
           <div
             className="p-3 rounded-full hover:bg-gray-200 transition-colors "
             onMouseEnter={handleMouseEnterScope}
             onMouseLeave={handleMouseLeaveScope}
           >
             <img
-              width="32"
+              width="24"
               height="32"
               src="https://img.icons8.com/windows/32/camcorder-pro.png"
               alt="camcorder-pro"
@@ -137,17 +138,17 @@ const Navbar = (props) => {
             </div>
           )}
         </div>
-        <div className="absolute ml-44 ">
+        <div className="absolute right-14 mt-2 mr-0">
           <div
             className="p-3 rounded-full hover:bg-gray-200 transition-colors "
             onMouseEnter={handleMouseEnterNotification}
             onMouseLeave={handleMouseLeaveNotification}
           >
             <img
-              width="36"
-              height="38"
-              src="https://img.icons8.com/material-outlined/24/filled-appointment-reminders.png"
-              alt="filled-appointment-reminders"
+              width="22"
+              height="50"
+              src="https://img.icons8.com/ios/50/appointment-reminders--v1.png"
+              alt="appointment-reminders--v1"
             />
           </div>
           {showTooltipNotification && (
@@ -160,12 +161,8 @@ const Navbar = (props) => {
           )}
         </div>
 
-        <div className="absolute ml-64 ">
-          <img
-            className="log w-13 ml-0 mb-8 "
-            src={props.elsrc2}
-            alt={props.elalt2}
-          />
+        <div className="absolute mt-2 right-0 mr-0 flex-grow ml-auto">
+          <img className="log  w-10 " src={props.elsrc2} alt={props.elalt2} />
         </div>
       </div>
     </div>
