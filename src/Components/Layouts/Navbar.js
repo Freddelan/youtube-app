@@ -57,7 +57,7 @@ const Navbar = (props) => {
         </div>
         <div className="logo absolute ml-20">
           <img
-            className="logoyt w-28 ml-2  "
+            className="logoyt w-28 ml-2 mt-1 "
             src={props.elsrc}
             alt={props.elalt}
           />

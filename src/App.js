@@ -1,44 +1,19 @@
 import React, { useState } from "react";
-import Navbar from "./Components/Layouts/Navbar";
-import logoyt from "./Assets/img/logoYt.png";
-import grandeimage from "./Assets/img/grandevideo.png";
-import log from "./Assets/img/log.png";
-import Sidebar from "./Components/Layouts/Sidebar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Main from "./Components/Layouts/Main";
-import petitesimages from "./Assets/img/img1.png";
+import NewPage from "./Components/Layouts/NewPage";
+import Commejeveux from "./Components/Layouts/Commejeveux";
 
 function App() {
-  const [isSidebarVisible, setSidebarVisible] = useState(false);
-  const toggleSidebar = () => setSidebarVisible(!isSidebarVisible);
-
   return (
     <div className="App">
-      <div>
-        <Navbar
-          toggleSidebar={toggleSidebar}
-          elsrc={logoyt}
-          elalt="logo youtube"
-          elsrc2={log}
-          elalt2="icone log"
-        />
-      </div>
-      {isSidebarVisible && (
-        <div>
-          <Sidebar
-            toggleSidebar={toggleSidebar}
-            elsrc={logoyt}
-            elalt="logo youtube"
-          />
-        </div>
-      )}
-      <div>
-        <Main
-          elsrc3={grandeimage}
-          elalt3="image principale youtube"
-          elsrc4={petitesimages}
-          elalt4="petite vidéo coté droit"
-        ></Main>
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" Component={Commejeveux} />
+          <Route path="/NewPage" Component={NewPage} />
+          <Route path="/Main" Component={Main} />
+        </Routes>
+      </Router>
     </div>
   );
 }
